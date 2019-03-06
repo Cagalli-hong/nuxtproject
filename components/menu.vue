@@ -11,7 +11,7 @@
           background-color="#545c64"
           text-color="#fff"
           active-text-color="#ffd04b">
-            <el-submenu index="1">
+            <!-- <el-submenu index="1">
               <template slot="title">
                 <i class="el-icon-location"></i>
                 <span>
@@ -30,7 +30,13 @@
                 <template slot="title">选项4</template>
                 <el-menu-item index="1-4-1">选项1</el-menu-item>
               </el-submenu>
-            </el-submenu>
+            </el-submenu> -->
+            <el-menu-item index="1">
+              <i class="el-icon-menu"></i>
+              <span slot="title">
+                <nuxt-link to="/detail">详情</nuxt-link>
+              </span>
+            </el-menu-item>
             <el-menu-item index="2">
               <i class="el-icon-menu"></i>
               <span slot="title">
