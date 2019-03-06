@@ -35,7 +35,10 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    { src: '~/plugins/element-ui', ssr: true }, // element-ui加载
+    { src: '~/plugins/util.js', ssr: false }, // 公共工具方法封装管理
+    { src: '~/plugins/common.js', ssr: false },
+    { src: '~/plugins/count-down.js', ssr: false } // 倒计时工具
   ],
 
   /*

@@ -37,7 +37,7 @@
                 <nuxt-link to="/introduce">介绍</nuxt-link>
               </span>
             </el-menu-item>
-            <el-menu-item index="3" disabled>
+            <el-menu-item index="3">
               <i class="el-icon-document"></i>
               <span slot="title">
                 <nuxt-link to="/main">主页</nuxt-link>

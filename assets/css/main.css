@@ -1,0 +1,36 @@
+/*全局路由动画 进入和退出时的渐隐渐现的效果 用nuxt-link跳转才有用*/
+.page-enter-active, .page-leave-active {
+  transition: opacity 1s;
+}
+
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
+
+/**
+ * 单独设置页面动效
+ * 使用：export default { transition:'test'}
+ */
+.test-enter-active, .test-leave-active {
+  transition: all 1s;
+  font-size: 12px;
+
+}
+
+.test-enter, .test-leave-active {
+  opacity: 0;
+  font-size: 40px;
+}
+
+/***** 统一关闭按钮 *****/
+.bm-btnClose {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  background-image: url("data:image/png;base64,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"); /*../images/delete_btn.png*/
+  background-size: 100% 100%;
+}
+
+/***** 统一关闭按钮 *****/
+

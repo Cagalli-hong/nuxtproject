@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-page">
     <menu-list></menu-list>
     <nuxt />
   </div>
@@ -62,5 +62,9 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+.main-page{
+  width: 1200px;
+  margin: 100px auto;
 }
 </style>
