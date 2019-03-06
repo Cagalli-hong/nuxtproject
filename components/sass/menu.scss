@@ -1,0 +1,15 @@
+.menulist{
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 150px;
+    .menuitem{
+        .el-col{
+            float: initial;
+            width: 100%;
+            a{
+                color: #fff;
+            }
+        }
+    }
+}

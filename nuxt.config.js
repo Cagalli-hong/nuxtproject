@@ -55,7 +55,29 @@ module.exports = {
     */
     extend(config, ctx) {
       
-    }
+    },
+    // 自定义 webpack 加载器
+    loaders: [
+      {
+      //   test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+      //   loader: 'url-loader',
+      //   options: {
+      //     limit: 10000,
+      //     name: 'img/[name].[hash:7].[ext]'
+      //   }
+      // }, {
+      //   test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+      //   loader: 'url-loader',
+      //   options: {
+      //     limit: 10000,
+      //     name: 'fonts/[name].[hash:7].[ext]'
+      //   }
+      // }, {
+        test: /\.scss$/,
+        loader: ['style', 'css', 'sass']
+        // loader: 'vue-style-loader!css-loader!sass-loader'
+      }
+    ],
   },
   router: {
     middleware: 'stats'
