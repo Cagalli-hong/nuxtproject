@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import locale from 'element-ui/lib/locale/lang/en'
+// import locale from 'element-ui/lib/locale/lang/en'
 
-//全局引用
+// 全局引用
 // import Element from 'element-ui'
 // export default () => {
 //   Vue.use(Element, { locale })
@@ -48,7 +48,7 @@ import {
   MenuItemGroup,
   Message,
   MessageBox,
-  Notification,
+  // Notification,
   Option,
   OptionGroup,
   Pagination,
@@ -88,6 +88,8 @@ Vue.use(Menu)
 Vue.use(Submenu)
 Vue.use(MenuItem)
 Vue.use(MenuItemGroup)
+Vue.use(Message)
+Vue.use(MessageBox)
 Vue.use(Input)
 Vue.use(InputNumber)
 Vue.use(Radio)

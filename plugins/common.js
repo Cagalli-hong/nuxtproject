@@ -3,7 +3,7 @@
  */
 import Vue from 'vue'
 import _ from 'lodash'
-import Util from '~/plugins/util'
+// import Util from '~/plugins/util'
 
 const Common = {
   // 获取跟路径

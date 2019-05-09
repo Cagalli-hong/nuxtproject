@@ -3,6 +3,7 @@
  */
 'use strict'
 import Vue from 'vue'
+import _ from 'lodash'
 
 const Util = (function () {
   const trim = (str) => { // 删除左右两端的空格

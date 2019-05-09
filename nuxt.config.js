@@ -1,6 +1,5 @@
 const pkg = require('./package')
 
-
 module.exports = {
   mode: 'spa',
 
@@ -52,12 +51,12 @@ module.exports = {
   */
   build: {
     transpile: [/^element-ui/],
-    
+
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
-      
+    extend (config, ctx) {
+
     },
     // 自定义 webpack 加载器
     loaders: [
@@ -80,7 +79,7 @@ module.exports = {
         loader: ['style', 'css', 'sass']
         // loader: 'vue-style-loader!css-loader!sass-loader'
       }
-    ],
+    ]
   },
   router: {
     middleware: 'stats'

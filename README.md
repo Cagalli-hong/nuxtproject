@@ -4,6 +4,11 @@
 
 ## Build Setup
 
+## 使用node及npm版本
+> node v10.X
+
+> npm 6.X
+
 ``` bash
 # install dependencies
 $ npm install
