@@ -13,7 +13,7 @@
 # install dependencies
 $ npm install
 
-# serve with hot reload at localhost:3000
+# serve with hot reload at localhost:1234
 $ npm run dev
 
 # build for production and launch server
@@ -22,6 +22,9 @@ $ npm start
 
 # generate static project
 $ npm run generate
-```
 
+$ npm run lint
+# 运行eslint
+
+```
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).

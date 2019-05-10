@@ -9,7 +9,7 @@
     </div>
     <div class="partitem">
       <span>part2: 穿梭器</span>
-    <div>
+    </div>
     <el-transfer v-model="value1" :data="data"></el-transfer>
   </div>
 </template>

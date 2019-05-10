@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const apiConfig = require('./api.config')
 
 module.exports = {
   mode: 'spa',
@@ -47,6 +48,13 @@ module.exports = {
   ],
 
   /*
+  ** Nuxt.js modules
+  */
+  env: {
+    server: apiConfig
+  },
+
+  /*
   ** Build configuration
   */
   build: {
@@ -56,7 +64,17 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-
+      if (ctx.isDev && ctx.isClient) {
+        console.log('ctx.isDev', ctx.isDev, ctx.isClient)
+        // Run ESLINT on save
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+          // exclude: [/(node_modules)/, /underscore-simple/, /webrtc/]
+        })
+      }
     },
     // 自定义 webpack 加载器
     loaders: [

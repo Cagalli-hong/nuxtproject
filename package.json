@@ -5,12 +5,15 @@
   "author": "hongying",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "cross-env NODE_ENV=dev nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "lint-standard": "standard --verbose | snazzy",
+    "precommit": "npm run lint",
+    "standard": "standard --fix"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -20,12 +23,22 @@
     "nuxt": "^2.4.0",
     "sass-loader": "^7.1.0"
   },
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "1234"
+    },
+    "scripts": {
+      "sit": "nuxt"
+    }
+  },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
+    "eslint-loader": "^2.1.2",
     "eslint-plugin-html": "^4.0.5",
-    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^3.1.0",

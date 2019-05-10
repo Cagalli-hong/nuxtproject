@@ -88,8 +88,6 @@ Vue.use(Menu)
 Vue.use(Submenu)
 Vue.use(MenuItem)
 Vue.use(MenuItemGroup)
-Vue.use(Message)
-Vue.use(MessageBox)
 Vue.use(Input)
 Vue.use(InputNumber)
 Vue.use(Radio)
@@ -145,3 +143,6 @@ Vue.use(Main)
 Vue.use(Footer)
 
 Vue.use(Loading.directive)
+
+Vue.prototype.$message = Message
+Vue.prototype.$msgbox = MessageBox
