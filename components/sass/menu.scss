@@ -1,8 +1,9 @@
 .menulist{
-    position: absolute;
+    position: relative;
     left: 0;
     top: 10%;
     width: 150px;
+    display: inline-block;
     .menuitem{
         .el-col{
             float: initial;

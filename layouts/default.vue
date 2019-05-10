@@ -1,7 +1,9 @@
 <template>
   <div class="main-page">
     <menu-list></menu-list>
-    <nuxt />
+    <div class="content">
+      <nuxt />
+    </div>
   </div>
 </template>
 
@@ -64,7 +66,10 @@ html {
   background-color: #35495e;
 }
 .main-page{
-  width: 1200px;
+  width: 100%;
   margin: 100px auto;
+}
+.content{
+  display: inline-block;
 }
 </style>
