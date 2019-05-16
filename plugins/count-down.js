@@ -14,13 +14,13 @@ const count = {
       d: '00', h: '00', m: '00', s: '00'
     }
     // let t = this
-    let newServerTime = (Util.Date.strToDate(serverTime).getTime()) + Common.serverTimeLoss() // 多加1秒作为传输损耗
-    let difference = (new Date().getTime()) - newServerTime
+    const newServerTime = (Util.Date.strToDate(serverTime).getTime()) + Common.serverTimeLoss() // 多加1秒作为传输损耗
+    const difference = (new Date().getTime()) - newServerTime
     let timer = null
     // 倒计时方法
-    function countDown (difference, deadline) {
-      let a = (Util.Date.strToDate(deadline)).getTime() // 截止时间
-      let b = (new Date().getTime()) - difference // 这是获取当前时间，是一个不固定的数值
+    function countDown(difference, deadline) {
+      const a = (Util.Date.strToDate(deadline)).getTime() // 截止时间
+      const b = (new Date().getTime()) - difference // 这是获取当前时间，是一个不固定的数值
       let [d, s, h, m] = [0, 0, 0, 0] // 定义变量
       d = Math.floor((a - b) / 1000 / 60 / 60 / 24) // 获取剩余天数
       h = Math.floor((a - b) / 1000 / 60 / 60 % 24) // 获取剩余小时

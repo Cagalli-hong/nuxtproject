@@ -19,9 +19,9 @@ const Common = {
   // 隐藏页面插件
   plugInHide: () => {
     // eslint-disable-next-line no-undef
-    let ids = $('body > div')
+    const ids = $('body > div')
     if (Object.prototype.toString.call(ids) === '[object Object]') {
-      _.each(ids, function (value, key) {
+      _.each(ids, function(value, key) {
         // console.log('value-id:>', value.id)
         if (value.id !== '' && value.id.indexOf('xunlei_com_thunder_helper') >= 0) {
           // eslint-disable-next-line no-undef

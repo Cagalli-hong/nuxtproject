@@ -17,7 +17,7 @@
 <script>
   export default {
     name: 'detail',
-    asyncData () {
+    asyncData() {
       const generateData = _ => {
         const data = []
         for (let i = 1; i <= 15; i++) {
@@ -35,7 +35,7 @@
         value1: [1, 4]
       }
     },
-    data () {
+    data() {
       return {
         // 倒计时
         countDown: {
@@ -44,13 +44,13 @@
         countcontinue: true // 倒计时继续
       }
     },
-    mounted () {
-      let t = this
+    mounted() {
+      const t = this
 
       // 倒计时
-      let starttime = '2019-02-01 07:00:00'
-      let endtime = '2019-02-01 08:00:00'
-      t.$count.doCountDown(starttime, endtime, function (data) {
+      const starttime = '2019-02-01 07:00:00'
+      const endtime = '2019-02-01 08:00:00'
+      t.$count.doCountDown(starttime, endtime, function(data) {
         if (data.result) {
           t.countDown = data.countcount
         } else {

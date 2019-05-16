@@ -13,6 +13,7 @@
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "lint-standard": "standard --verbose | snazzy",
     "precommit": "npm run lint",
+    "server": "node server.js",
     "standard": "standard --fix"
   },
   "dependencies": {
@@ -34,6 +35,8 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^3.1.0",
     "eslint-plugin-vue": "^4.7.1",
+    "express": "^4.16.4",
+    "http-proxy-middleware": "^0.19.1",
     "lodash": "^4.17.11",
     "nodemon": "^1.18.9"
   }

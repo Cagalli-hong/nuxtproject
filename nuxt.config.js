@@ -51,7 +51,8 @@ module.exports = {
   ** 环境变量
   */
   env: {
-    server: apiConfig
+    server: apiConfig,
+    NODE_ENV: process.env.NODE_ENV
   },
 
   /*

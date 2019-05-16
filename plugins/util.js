@@ -5,12 +5,12 @@
 import Vue from 'vue'
 import _ from 'lodash'
 
-const Util = (function () {
+const Util = (function() {
   const trim = (str) => { // 删除左右两端的空格
     return str.replace(/(^\s*)|(\s*$)/g, '')
   }
 
-  let util = {}
+  const util = {}
 
   // IE9 IE10 IE11
   util.isIE = () => { // ie9-ie10
@@ -36,7 +36,7 @@ const Util = (function () {
     let flag = false
 
     if (navigator.appName === 'Microsoft Internet Explorer') {
-      let appVersion = navigator.appVersion.split(';')[1].replace(/[ ]/g, '')
+      const appVersion = navigator.appVersion.split(';')[1].replace(/[ ]/g, '')
       if (appVersion === 'MSIE9.0') {
         flag = true
       }
@@ -50,7 +50,7 @@ const Util = (function () {
     let flag = false
 
     if (navigator.appName === 'Microsoft Internet Explorer') {
-      let appVersion = navigator.appVersion.split(';')[1].replace(/[ ]/g, '')
+      const appVersion = navigator.appVersion.split(';')[1].replace(/[ ]/g, '')
       if (appVersion === 'MSIE9.0' || appVersion === 'MSIE10.0') {
         flag = true
       }
@@ -70,13 +70,13 @@ const Util = (function () {
   }
 
   util.Params = {
-    query: function (key) { // 里面包含 this ，不能使用箭头函数
-      let sHref = window.location.href
+    query: function(key) { // 里面包含 this ，不能使用箭头函数
+      const sHref = window.location.href
       return trim(decodeURIComponent(this.GetArgsFromHref(sHref, key)))
     },
 
     // 查询url,获取key-value
-    queryUrl: function (sHref, key) {
+    queryUrl: function(sHref, key) {
       return trim(decodeURIComponent(this.GetArgsFromHref(sHref, key)))
     },
 
@@ -97,7 +97,7 @@ const Util = (function () {
       args = str.split('&')
       for (let i = 0; i < args.length; i++) {
         str = args[i]
-        let arg = str.split('=')
+        const arg = str.split('=')
         if (arg.length <= 1) continue
         if (arg[0] === sArgName) {
           retval = arg[1]
@@ -122,7 +122,7 @@ const Util = (function () {
     }
   }
 
-  util.View = (function () {
+  util.View = (function() {
     let [pageWidth, pageHeight] = [window.innerWidth, window.innerHeight]
     if (Object.prototype.toString.call(pageWidth) === '[object Number]') {
       if (document.compatMode === 'CSS1Compat') { // 检查是否属于标准模式
@@ -141,15 +141,15 @@ const Util = (function () {
 
   util.Date = {
     // 获取当前时间
-    getFormatDate: function (date, type) {
+    getFormatDate: function(date, type) {
       if (typeof (date) === 'string') {
         date = (date === '') ? new Date() : (new Date(String(date).replace(/-/g, '/')))
       } else if (!isNaN(date)) {
         date = this.timesToDate(date)
       }
       // eslint-disable-next-line no-extend-native
-      Date.prototype.Format = function (fmt) {
-        let o = {
+      Date.prototype.Format = function(fmt) {
+        const o = {
           'M+': this.getMonth() + 1, // 月份
           'd+': this.getDate(), // 日
           'h+': this.getHours(), // 小时
@@ -161,7 +161,7 @@ const Util = (function () {
         if (/(y+)/.test(fmt)) {
           fmt = fmt.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length))
         }
-        for (let k in o) {
+        for (const k in o) {
           if (new RegExp('(' + k + ')').test(fmt)) {
             fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length)))
           }
@@ -258,7 +258,7 @@ const Util = (function () {
       if (!str) {
         return false
       }
-      let regExp = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/
+      const regExp = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/
       str = str.trim()
       return (str.length !== 0) ? regExp.test(str) : false
     },
@@ -281,8 +281,8 @@ const Util = (function () {
       if (!str) {
         return false
       }
-      let creg = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]{1}$/
-      let xreg = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}(([0-9]{5}[DF]$)|([DF][A-HJ-NP-Z0-9][0-9]{4}$))/
+      const creg = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]{1}$/
+      const xreg = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}(([0-9]{5}[DF]$)|([DF][A-HJ-NP-Z0-9][0-9]{4}$))/
       if (str.length === 7) {
         return creg.test(str)
       } else if (str.length === 8) {
@@ -318,7 +318,7 @@ const Util = (function () {
     // 隐藏部分名字
     hideUserName: (str) => {
       str = (str + '').replace(/\s*/g, '')
-      let len = str.length
+      const len = str.length
       if (len === 1) { // 1位
         return str + '*'
       } else if (str.length === 2) { // 2位
@@ -333,7 +333,7 @@ const Util = (function () {
     },
     // 隐藏身份证
     hiddenIdCard: (str, frontLen, endLen) => {
-      let len = str.length - frontLen - endLen
+      const len = str.length - frontLen - endLen
       let xing = ''
       for (let i = 0; i < len; i++) {
         xing += '*'
@@ -341,7 +341,7 @@ const Util = (function () {
       return str.substring(0, frontLen) + xing + str.substring(str.length - endLen)
     },
     // 过滤html标签
-    delHtmlTag (str) {
+    delHtmlTag(str) {
       return str.replace(/<[^>]+>/g, '') // 去掉所有的html标记
     }
   }
@@ -353,20 +353,20 @@ const Util = (function () {
         scrollTop: 0
       }, 700)
     },
-    getScrollTop: function (id) { // 取窗口滚动条高度
+    getScrollTop: function(id) { // 取窗口滚动条高度
       return document.getElementById(id).scrollTop
     },
-    getClientHeight: function (id) { // 取窗口可视范围的高度
+    getClientHeight: function(id) { // 取窗口可视范围的高度
       return document.getElementById(id).clientHeight
     },
-    getScrollHeight: function (id) { // 取文档内容实际高度
+    getScrollHeight: function(id) { // 取文档内容实际高度
       return document.getElementById(id).scrollHeight
     },
     /**
      * 监听窗口滚动
      * @param callback
      */
-    monitorWinScroll: function (callback) {
+    monitorWinScroll: function(callback) {
       if (document.addEventListener) {
         document.addEventListener('scroll', () => {
           if (callback) {
@@ -393,14 +393,14 @@ const Util = (function () {
     const Server = process.env.server
 
     // 获取数据以后销毁这个iframe，释放内存；这也保证了安全（不被其他域frame js访问）
-    function destoryFrame () {
+    function destoryFrame() {
       iframe.contentWindow.document.write('')
       iframe.contentWindow.close()
       document.body.removeChild(iframe)
     }
 
     let state = 0
-    let iframe = document.createElement('iframe')
+    const iframe = document.createElement('iframe')
 
     // 加载跨域页面
     iframe.src = url
