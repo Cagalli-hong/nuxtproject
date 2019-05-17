@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>上传2-5张图片</h1>
+    <h3>上传2-5张图片</h3>
     <el-form :model="form" ref="editForm" label-width="120px" class="edit-form">
        <el-form-item label="详情图" prop="packageFileId">
          <el-upload
@@ -70,6 +70,7 @@
       },
       imgSuccess(res, file) {
         this.form.screenImgs.push({ url: res.data.filePath, fileId: res.data.fileId, uid: file.uid })
+        console.log('screenImgs', this.form.screenImgs)
       },
       imgRemove(file, fileList) {
         const idx = this.form.screenImgs.findIndex(item => {
@@ -107,5 +108,7 @@
   }
 </script>
 <style lang="scss">
-
+  .edit-form .hidden .el-upload{
+    display: none;
+  }
 </style>

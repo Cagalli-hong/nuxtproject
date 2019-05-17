@@ -1,9 +1,13 @@
 <template>
   <div class="main-page">
-    <menu-list></menu-list>
-    <div class="content">
-      <nuxt />
-    </div>
+    <el-container>
+      <el-aside width="200px">
+        <menu-list></menu-list>
+      </el-aside>
+      <el-main>
+        <nuxt />
+      </el-main>
+    </el-container>
   </div>
 </template>
 
@@ -68,8 +72,5 @@ html {
 .main-page{
   width: 100%;
   margin: 100px auto;
-}
-.content{
-  display: inline-block;
 }
 </style>

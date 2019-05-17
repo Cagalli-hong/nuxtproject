@@ -1,5 +1,4 @@
 const pkg = require('./package')
-const apiConfig = require('./api.config')
 var config = require('./config/index')
 
 module.exports = {
@@ -57,7 +56,6 @@ module.exports = {
   ** 环境变量
   */
   env: {
-    server: apiConfig,
     NODE_ENV: process.env.NODE_ENV
   },
 
