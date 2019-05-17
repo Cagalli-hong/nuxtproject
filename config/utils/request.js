@@ -2,18 +2,14 @@ import axios from 'axios'
 import { Message } from 'element-ui'
 
 const baseurl = process.env.NODE_ENV === 'dev' ? '' : '/api'
-console.log('NODE_ENV', process.env.NODE_ENV)
+// console.log('request_NODE_ENV', process.env.NODE_ENV)
 const service = axios.create({
   baseURL: baseurl,
   timeout: 15000
 })
 
 service.interceptors.request.use(config => {
-  config.headers['Authorization'] = '522f4a8e-46b2-40af-b102-a52a7686d391' // 给所有调用接口在header配置一个Authorization参数s
-  if (config.method === 'get') {
-    config.data = true
-  }
-  config.headers['Content-Type'] = 'application/json; charset=UTF-8'
+  config.headers['Authorization'] = '6a709fa8-5ea1-4c65-9d45-8e346fd06d4e' // 给所有调用接口在header配置一个Authorization参数
   return config
 }, error => {
   Promise.reject(error)

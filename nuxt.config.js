@@ -1,5 +1,6 @@
 const pkg = require('./package')
 const apiConfig = require('./api.config')
+var config = require('./config/index')
 
 module.exports = {
   mode: 'spa',
@@ -45,7 +46,12 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios'
   ],
+  axios: {
+    proxy: true
+  },
+  proxy: config.dev.proxyTable,
 
   /*
   ** 环境变量
@@ -54,6 +60,8 @@ module.exports = {
     server: apiConfig,
     NODE_ENV: process.env.NODE_ENV
   },
+
+  dev: (process.env.NODE_ENV !== 'production'),
 
   /*
   ** 设置server
@@ -74,7 +82,7 @@ module.exports = {
     */
     extend (config, ctx) {
       if (ctx.isDev && ctx.isClient) {
-        console.log('ctx.isDev', ctx.isDev, ctx.isClient)
+        // console.log('ctx.isDev', ctx.isDev, ctx.isClient)
         // Run ESLINT on save
         config.module.rules.push({
           enforce: 'pre',

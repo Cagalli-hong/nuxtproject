@@ -23,7 +23,7 @@
   </div>
 </template>
 <script>
-  import { uploadimg, getAllbanner } from '../../config/api/app'
+  import { uploadimg, getserverTime } from '../../config/api/app'
 
   export default {
     name: 'introduce',
@@ -35,7 +35,7 @@
       }
     },
     mounted() {
-      getAllbanner().then(res => {
+      getserverTime().then(res => {
         console.log('res', res)
       }).catch(err => {
         console.log(err)

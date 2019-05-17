@@ -1,5 +1,6 @@
 'use strict'
 
+// console.log('NODE_ENV_proxytable', process.env.NODE_ENV)
 const proxy = process.env.NODE_ENV === 'dev' ? {
   '/cas-admin-app': {   // 后台管理系统接口服务路由-开发环境接口使用
     target: 'http://10.8.75.132:6098', // 转发开发目标地址-开发环境接口使用

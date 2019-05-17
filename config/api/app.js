@@ -8,9 +8,9 @@ export function uploadimg(data) {
   })
 }
 
-export function getAllbanner() {
+export function getserverTime() {
   return request({
-    url: '/cas-admin-app/appBanner/queryAll',
+    url: '/cas-admin-app/common/serverTime',
     method: 'get'
   })
 }
