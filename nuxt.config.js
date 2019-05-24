@@ -38,6 +38,7 @@ module.exports = {
     { src: '~/plugins/element-ui', ssr: true }, // element-ui加载
     { src: '~/plugins/util.js', ssr: false }, // 公共工具方法封装管理
     { src: '~/plugins/common.js', ssr: false },
+    { src: '~/plugins/echart.js', ssr: false }, // Echart工具
     { src: '~/plugins/count-down.js', ssr: false } // 倒计时工具
   ],
 

@@ -1,7 +1,7 @@
 <template>
   <div class="main-page">
     <el-container>
-      <el-aside width="200px">
+      <el-aside>
         <menu-list></menu-list>
       </el-aside>
       <el-main>
@@ -72,5 +72,10 @@ html {
 .main-page{
   width: 100%;
   margin: 100px auto;
+}
+.el-aside {
+  color: #333;
+  text-align: center;
+  width: 200px;
 }
 </style>

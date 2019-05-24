@@ -49,6 +49,12 @@
                 <nuxt-link to="/main">主页</nuxt-link>
               </span>
             </el-menu-item>
+            <el-menu-item index="4">
+              <i class="el-icon-document"></i>
+              <span slot="title">
+                <nuxt-link to="/chart">图表</nuxt-link>
+              </span>
+            </el-menu-item>
         </el-menu>
       </el-col>
     </div>

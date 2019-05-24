@@ -1,10 +1,10 @@
 .menulist{
-    position: relative;
-    left: 0;
-    top: 10%;
     width: 150px;
     display: inline-block;
     .menuitem{
+        h5{
+            line-height: 20px;
+        }
         .el-col{
             float: initial;
             width: 100%;
